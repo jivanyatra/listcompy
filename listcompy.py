@@ -13,12 +13,13 @@ shortlist = []
 
 '''Importing emails from shortfile into a list'''
 for line in shortfile:
-    shortlist.append(line)
+    shortlist.append(line.strip())
 
 '''Breaking up masterfile into a list of lines, and
 breaking up each line into a list'''
 for line in masterfile:
-    spl = line.split(',')
+    lr = line.rstrip()
+    spl = lr.split(',')
     masterlist.append(spl)
 
 masterfile.close()
