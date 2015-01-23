@@ -1,12 +1,12 @@
 '''Enter your filenames here.'''
-large_list = ''
-small_list = ''
-new_list = ''
+large_list = 'testmaster'
+small_list = 'testshort'
+new_list = 'testoutput'
 
 '''Opening files with the proper permissions'''
 masterfile = open(large_list, 'r')
 shortfile = open(small_list, 'r')
-output = open(new_list, 'w')
+#output = open(new_list, 'w')
 
 masterlist = []
 shortlist = []
@@ -20,6 +20,9 @@ breaking up each line into a list'''
 for line in masterfile:
     spl = line.split(',')
     masterlist.append(spl)
+
+masterfile.close()
+shortfile.close()
 
 print shortlist
 print masterlist
