@@ -25,7 +25,16 @@ for line in masterfile:
 masterfile.close()
 shortfile.close()
 
+print masterlist[0]
+print masterlist[6]
+
+masterlist[0][3] = 'testing'
+masterlist[6][7] = 'testing'
+
 for each in shortlist:
     print each
 for each in masterlist:
     print each
+
+for each in masterlist:
+    print ','.join(each)
