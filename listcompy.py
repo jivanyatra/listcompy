@@ -24,5 +24,7 @@ for line in masterfile:
 masterfile.close()
 shortfile.close()
 
-print shortlist
-print masterlist
+for each in shortlist:
+    print each
+for each in masterlist:
+    print each
