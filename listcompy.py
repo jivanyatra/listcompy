@@ -6,7 +6,7 @@ new_list = 'testoutput'
 '''Opening files with the proper permissions'''
 masterfile = open(large_list, 'r')
 shortfile = open(small_list, 'r')
-#output = open(new_list, 'w')
+output = open(new_list, 'a')
 
 masterlist = []
 shortlist = []
@@ -25,6 +25,7 @@ for line in masterfile:
 masterfile.close()
 shortfile.close()
 
+'''
 print masterlist[0]
 print masterlist[6]
 
@@ -35,6 +36,14 @@ for each in shortlist:
     print each
 for each in masterlist:
     print each
+'''
 
 for each in masterlist:
-    print ','.join(each)
+    if each[0] in shortlist:
+        each[7] == 'p'
+
+
+for each in masterlist:
+    output.write(','.join(each))
+
+output.close()
