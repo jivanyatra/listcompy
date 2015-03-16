@@ -13,7 +13,7 @@ shortlist = []
 
 '''Importing emails from shortfile into a list'''
 for line in shortfile:
-    shortlist.append(line.strip())
+    shortlist.append(line.strip().lower())
 
 '''Breaking up masterfile into a list of lines, and
 breaking up each line into a list'''
@@ -39,11 +39,11 @@ for each in masterlist:
 '''
 
 for each in masterlist:
-    if each[0] in shortlist:
+    if each[0].lower() in shortlist:
         each[7] == 'p'
 
 
 for each in masterlist:
-    output.write(','.join(each))
+    output.write(','.join(each) + '\n')
 
 output.close()
