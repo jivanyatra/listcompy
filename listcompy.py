@@ -2,11 +2,13 @@
 large_list = 'testmaster'
 small_list = 'testshort'
 new_list = 'testoutput'
+leftover_list = 'testremainder'
 
 '''Opening files with the proper permissions'''
 masterfile = open(large_list, 'r')
 shortfile = open(small_list, 'r')
 output = open(new_list, 'a')
+remainder = open(leftover_list, 'a')
 
 masterlist = []
 shortlist = []
@@ -41,9 +43,13 @@ for each in masterlist:
 for each in masterlist:
     if each[0].lower() in shortlist:
         each[7] == 'p'
-
+        shortlist.remove(each[0].lower())
 
 for each in masterlist:
     output.write(','.join(each) + '\n')
 
+for each in shortlist:
+    remainder.write(each + '\n')
+
 output.close()
+remainder.close()
