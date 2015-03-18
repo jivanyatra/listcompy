@@ -42,7 +42,7 @@ for each in masterlist:
 
 for each in masterlist:
     if each[0].lower() in shortlist:
-        each[7] == 'p'
+        each[7] = 'p'
         shortlist.remove(each[0].lower())
 
 for each in masterlist:
